@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram</title>
+    <style>
+        * {
+            margin: 0px;
+            color: rgb(255, 255, 255);
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .page {
+            display: flex;
+        }
+
+        .vertical {
+            top: 0px;
+            border-left: 1px solid rgb(255, 255, 255);
+            height: 100%;
+            position: absolute;
+            left: 210px;
+        }
+
+        .settings {
+            background-color: black;
+            margin: 0px;
+            width: 210px;
+            height: 630px;
+        }
+
+        .settings img {
+            position: relative;
+            left: 3px;
+            top: 5px;
+            width: 90px;
+            height: 60px;
+            filter: invert(1);
+        }
+
+        .settings img:hover {
+            cursor: pointer;
+        }
+
+        .box {
+            color: white;
+            background-color: black;
+            position: relative;
+            width: 200px;
+            font-size: 13px;
+            margin: 12px 10px;
+            padding: 5px 0px;
+            border-radius: 6px;
+        }
+
+        .box:hover {
+            cursor: pointer;
+            background-color: rgb(44, 44, 44);
+        }
+
+        .more {
+            color: white;
+            background-color: black;
+            font-size: 13px;
+            position: relative;
+            margin: 12px 10px;
+            padding: 5px 0px;
+            border-radius: 6px;
+            top: 190px;
+            width: 200px;
+        }
+
+        .more:hover {
+            cursor: pointer;
+            background-color: rgb(44, 44, 44);
+        }
+
+        .box img {
+            border-radius: 50%;
+            width: 16px;
+            height: 16px;
+            position: relative;
+            left: 0px;
+        }
+
+        .more img {
+            width: 16px;
+            height: 16px;
+            position: relative;
+            left: 0px;
+        }
+
+        .center {
+            width: 600px;
+            background-color: rgb(0, 0, 0);
+        }
+
+        .right {
+            font-size: 9px;
+            width: 500px;
+            background-color: rgb(0, 0, 0);
+        }
+
+        .item img {
+            border-radius: 50%;
+            position: relative;
+            top: 35px;
+            left: 70px;
+            width: 40px;
+            height: 40px;
+        }
+
+        .details {
+            position: relative;
+            width: 100px;
+            left: 120px;
+        }
+
+        #user {
+            position: relative;
+            left: 0px;
+        }
+
+        #switch {
+            color: rgb(46, 123, 255);
+            position: relative;
+            left: 130px;
+        }
+
+        #all {
+            color: rgb(255, 255, 255);
+            position: relative;
+            left: 150px;
+        }
+
+        #tag {
+            color: rgb(120, 120, 120);
+        }
+
+        .suggestions {
+            color: rgb(120, 120, 120);
+            margin-top: 35px;
+            margin-left: 70px;
+        }
+
+        .cont {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .cont img {
+            border-radius: 50%;
+            position: relative;
+            top: 24px;
+            left: 15px;
+            width: 20px;
+            height: 20px;
+        }
+
+        #users {
+            position: relative;
+            left: 50px;
+            top: 0px;
+            width: 200px;
+        }
+
+        #follow {
+            color: rgb(46, 123, 255);
+            position: relative;
+            left: 140px;
+            top: 0px;
+        }
+
+        .circle img {
+            border-radius: 50%;
+            border: 2px solid rgb(197, 5, 60);
+            margin: 0px 5px;
+            width: 40px;
+            height: 40px;
+            position: relative;
+            left: 180px;
+            top: 50px;
+        }
+
+        .post img {
+            margin: 0px 5px;
+            filter: invert(1);
+            width: 30px;
+            height: 30px;
+            position: relative;
+            left: 250px;
+            top: 80px;
+        }
+
+        #dp {
+            filter: invert(0);
+            border-radius: 50%;
+        }
+
+        .post h5 {
+            font-size: 8px;
+            position: relative;
+            left: 300px;
+            top: 50px;
+        }
+
+        .post span {
+            color: rgb(120, 120, 120);
+        }
+
+        #dots {
+            position: relative;
+            top: 0px;
+            left: 200px;
+            width: 10px;
+            height: 10px;
+        }
+
+        .posting {
+            position: relative;
+            top: 75px;
+            left: 260px;
+            width: 310px;
+            height: 390px;
+        }
+
+        .posting img {
+            filter: invert(0);
+            position: relative;
+            margin: 0px;
+            padding: 0px;
+            top: 0px;
+            left: 0px;
+            width: 310px;
+            height: 390px;
+        }
+
+        #dp1 {
+            border-radius: 50%;
+            filter: invert(0);
+        }
+
+        .like img {
+            padding-left: 8px;
+            margin: 0px;
+            width: 20px;
+            height: 20px;
+        }
+
+        #save {
+            padding-left: 200px;
+        }
+
+        .liked img {
+            position: relative;
+            width: 10px;
+            height: 10px;
+            left: 255px;
+            top: 77px;
+        }
+
+        .liked h5 {
+            position: relative;
+            top: 63px;
+            left: 280px;
+        }
+
+        .cmnt {
+            position: relative;
+            font-size: 8px;
+            left: 260px;
+            top: 65px;
+        }
+
+        .like:hover {
+            cursor: pointer;
+        }
+
+        .liked:hover {
+            cursor: pointer;
+        }
+
+        .cmnt:hover {
+            cursor: pointer;
+        }
+
+        .post h5:hover {
+            color: rgb(120, 120, 120);
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+        <div class="vertical"></div>
+        <div class="settings">
+            <img src="insta3.webp" alt="Image not found">
+            <div class="box">
+                <img src="instahome.png" alt="Image not found">
+                Home
+            </div>
+            <div class="box">
+                <img src="search.png" alt="Image not found">
+                Search
+            </div>
+            <div class="box">
+                <img src="explore.png" alt="Image not found">
+                Explore
+            </div>
+            <div class="box">
+                <img src="reels.png" alt="Image not found">
+                Reels
+            </div>
+            <div class="box">
+                <img src="messages.png" alt="Image not found">
+                Messages
+            </div>
+            <div class="box">
+                <img src="heart.png" alt="Image not found">
+                Notifications
+            </div>
+            <div class="box">
+                <img src="plus1.png" alt="Image not found">
+                Create
+            </div>
+            <div class="box">
+                <img src="profile4.jpeg" alt="Image not found">
+                Profile
+            </div>
+            <div class="more">
+                <img src="more.png" alt="Image not found">
+                More
+            </div>
+        </div>
+        <div class="center">
+            <div class="circle">
+                <img src="profile1.webp" alt="Image not found">
+                <img src="profile2.jpg" alt="Image not found">
+                <img src="profile3.jpeg" alt="Image not found">
+                <img src="profile5.jpeg" alt="Image not found">
+                <img src="profile6.webp" alt="Image not found">
+                <img src="profile7.webp" alt="Image not found">
+                <img src="profile8.jpeg" alt="Image not found">
+                <img src="profile9.jpg" alt="Image not found">
+            </div>
+            <div class="post">
+                <img src="profile1.webp" id="dp" alt="Image not found">
+                <h5>strlightxx <span>&nbsp;&nbsp;&nbsp;.1h</span><img src="moredots.png" id="dots"
+                        alt="Image not found">
+                </h5>
+                <div class="posting">
+                    <img src="post1.jpg" alt="Image not found">
+                </div>
+                <div class="like">
+                    <img src="heart.png" alt="Image not found">
+                    <img src="msg.png" alt="Image not found">
+                    <img src="share1.png" alt="Image not found">
+                    <img src="save.png" id="save" alt="Image not found">
+                </div>
+                <div class="liked">
+                    <img src="profile2.jpg" id="dp1" alt="Image not found">
+                    <h5>Liked by vibes.18 and 693 others</h5>
+                </div>
+                <div class="cmnt">
+                    strlightxx <span>Pleasant vibes...</span>
+                    <br>
+                    <span>View all 20 comments</span>
+                    <br>
+                    <span>Add a comment...</span>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="item">
+                <img src="profile4.jpeg" alt="Image not found">
+                <div class="details">
+                    <div id="user">
+                        mehh.568
+                        <span id="switch">
+                            Switch
+                        </span>
+                    </div>
+                    <div id="tag">
+                        __itsme__
+                    </div>
+                </div>
+            </div>
+            <div class="suggestions">
+                Suggested for you
+                <span id="all">
+                    See All
+                </span>
+                <div class="cont">
+                    <img src="sug1.jpeg" alt="Image not found">
+                    <div id="users">
+                        pretty51
+                        <span id="follow">
+                            Follow
+                        </span>
+                        <div id="tag">
+                            __miss
+                        </div>
+                    </div>
+                    <img src="sug2.jpeg" alt="Image not found">
+                    <div id="users">
+                        queenzz
+                        <span id="follow">
+                            Follow
+                        </span>
+                        <div id="tag">
+                            senorita
+                        </div>
+                    </div>
+                    <img src="sug3.jpeg" alt="Image not found">
+                    <div id="users">
+                        gamerxx
+                        <span id="follow">
+                            Follow
+                        </span>
+                        <div id="tag">
+                            ~~~
+                        </div>
+                    </div>
+                    <img src="sug4.png" alt="Image not found">
+                    <div id="users">
+                        coder__
+                        <span id="follow">
+                            Follow
+                        </span>
+                        <div id="tag">
+                            coder rizz
+                        </div>
+                    </div>
+                    <img src="sug5.jpeg" alt="Image not found">
+                    <div id="users">
+                        _1532.8
+                        <span id="follow">
+                            Follow
+                        </span>
+                        <div id="tag">
+                            ...nothin'
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
